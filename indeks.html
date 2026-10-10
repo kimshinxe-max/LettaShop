@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letta Shop - Sweet Sanrio Ice Cream Delight 🍦💖</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts (Fredoka & Quicksand) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #fff0f5;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Fredoka', cursive;
+        }
+        .bg-sanrio-pink {
+            background-color: #ffb6c1;
+        }
+        .bg-sanrio-light {
+            background-color: #fff0f3;
+        }
+        .text-sanrio-dark {
+            color: #d63384;
+        }
+        .bounce-slow {
+            animation: bounce 3s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-5%); }
+            50% { transform: translateY(0); }
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 182, 193, 0.5);
+        }
+    </style>
+</head>
+<body class="text-pink-900 flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 glassmorphism shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <span class="text-3xl">🍦</span>
+                <span class="text-2xl font-bold font-heading text-pink-600 tracking-wide">Letta Shop</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-6 font-semibold">
+                <a href="#home" class="hover:text-pink-500 transition">Beranda</a>
+                <a href="#menu" class="hover:text-pink-500 transition">Menu Es Krim</a>
+                <a href="#merch" class="hover:text-pink-500 transition">Merchandise</a>
+                <a href="#testi" class="hover:text-pink-500 transition">Ulasan</a>
+            </nav>
+
+            <!-- Cart Icon & CTA -->
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleCart()" class="relative p-2 text-pink-600 hover:text-pink-700 transition">
+                    <i class="fa-solid fa-cart-shopping text-2xl"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">0</span>
+                </button>
+                <a href="https://wa.me/" target="_blank" class="bg-pink-400 hover:bg-pink-500 text-white font-bold px-4 py-2 rounded-full shadow-lg transition transform hover:scale-105 flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Pesan Langsung</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden py-16 px-4 bg-gradient-to-b from-pink-100 to-pink-200">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="md:w-1/2 text-center md:text-left">
+                <span class="bg-pink-300 text-pink-800 text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">✨ Manis & Menggemaskan ✨</span>
+                <h1 class="text-4xl md:text-6xl font-bold text-pink-600 mt-4 leading-tight">
+                    Selamat Datang di <br><span class="text-pink-400 drop-shadow">Letta Shop!</span> 🌸
+                </h1>
+                <p class="text-lg text-pink-700 mt-4">
+                    Nikmati kelezatan es krim lembut dengan tema khas pastel Sanrio yang lucu! Dibuat dengan cinta dan bahan-bahan manis premium khusus untuk kamu. ✨🍦
+                </p>
+                <div class="mt-6 flex justify-center md:justify-start gap-4">
+                    <a href="#menu" class="bg-pink-500 hover:bg-pink-600 text-white font-bold px-6 py-3 rounded-full shadow-lg transition transform hover:scale-105">
+                        Lihat Menu 🍓
+                    </a>
+                    <a href="#merch" class="bg-white hover:bg-pink-50 text-pink-500 border-2 border-pink-300 font-bold px-6 py-3 rounded-full shadow-md transition transform hover:scale-105">
+                        Merch Sanrio 🎀
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 flex justify-center relative">
+                <div class="w-72 h-72 md:w-96 md:h-96 bg-white rounded-full flex items-center justify-center shadow-2xl border-8 border-pink-300 bounce-slow">
+                    <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80" alt="Sanrio Theme Ice Cream" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Es Krim Section -->
+    <section id="menu" class="py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-pink-600 mb-2">🎀 Special Sanrio Ice Cream 🍦</h2>
+            <p class="text-pink-700 mb-10">Pilihan varian es krim lucu dengan rasa favoritmu!</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-3xl p-5 shadow-lg border-2 border-pink-200 hover:shadow-xl transition transform hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 rounded-2xl overflow-hidden mb-4 relative">
+                            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" alt="Strawberry Cone" class="w-full h-full object-cover">
+                            <span class="absolute top-2 right-2 bg-pink-400 text-white text-xs font-bold px-2 py-1 rounded-full">Best Seller</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-pink-600">My Melody Strawberry Sundae</h3>
+                        <p class="text-sm text-pink-700 mt-2">Es krim lembut rasa stroberi segar dengan topping marshmallow berbentuk pita melodi.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-pink-100 flex items-center justify-between">
+                        <span class="text-lg font-bold text-pink-600">Rp 25.000</span>
+                        <button onclick="addToCart('My Melody Strawberry Sundae', 25000)" class="bg-pink-400 hover:bg-pink-500 text-white font-bold px-4 py-2 rounded-full text-sm shadow transition">
+                            + Tambah
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-3xl p-5 shadow-lg border-2 border-pink-200 hover:shadow-xl transition transform hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 rounded-2xl overflow-hidden mb-4 relative">
+                            <img src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=600&q=80" alt="Vanilla Cone" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-pink-600">Hello Kitty Sweet Vanilla</h3>
+                        <p class="text-sm text-pink-700 mt-2">Es krim vanila klasik lembut disajikan dalam cone wafel merah muda berkilau.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-pink-100 flex items-center justify-between">
+                        <span class="text-lg font-bold text-pink-600">Rp 22.000</span>
+                        <button onclick="addToCart('Hello Kitty Sweet Vanilla', 22000)" class="bg-pink-400 hover:bg-pink-500 text-white font-bold px-4 py-2 rounded-full text-sm shadow transition">
+                            + Tambah
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-3xl p-5 shadow-lg border-2 border-pink-200 hover:shadow-xl transition transform hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 rounded-2xl overflow-hidden mb-4 relative">
+                            <img src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?auto=format&fit=crop&w=600&q=80" alt="Cotton Candy" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-pink-600">Cinnamoroll Cloud Cotton Candy</h3>
+                        <p class="text-sm text-pink-700 mt-2">Kombinasi rasa permen kapas manis dengan sentuhan warna biru-pastel & pink.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-pink-100 flex items-center justify-between">
+                        <span class="text-lg font-bold text-pink-600">Rp 28.000</span>
+                        <button onclick="addToCart('Cinnamoroll Cloud Cotton Candy', 28000)" class="bg-pink-400 hover:bg-pink-500 text-white font-bold px-4 py-2 rounded-full text-sm shadow transition">
+                            + Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merchandise Section -->
+    <section id="merch" class="py-16 px-4 bg-pink-100">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-pink-600 mb-2">🛍️ Sanrio Cute Merch</h2>
+            <p class="text-pink-700 mb-10">Koleksi barang-barang lucu bertema Sanrio & Ice Cream!</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Merch 1 -->
+                <div class="bg-white rounded-3xl p-5 shadow-lg border-2 border-pink-200 hover:shadow-xl transition flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 rounded-2xl overflow-hidden mb-4 bg-pink-50 flex items-center justify-center text-6xl">
+                            🧸
+                        </div>
+                        <h3 class="text-xl font-bold text-pink-600">Gantungan Kunci Ice Cream</h3>
+                        <p class="text-sm text-pink-700 mt-2">Gantungan akrilik lucu Sanrio memegang cone es krim.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-pink-100 flex items-center justify-between">
+                        <span class="text-lg font-bold text-pink-600">Rp 15.000</span>
+                        <button onclick="addToCart('Gantungan Kunci Ice Cream', 15000)" class="bg-pink-400 hover:bg-pink-500 text-white font-bold px-4 py-2 rounded-full text-sm shadow transition">
+                            + Tambah
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Merch 2 -->
+                <div class="bg-white rounded-3xl p-5 shadow-lg border-2 border-pink-200 hover:shadow-xl transition flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 rounded-2xl overflow-hidden mb-4 bg-pink-50 flex items-center justify-center text-6xl">
+                            🥛
+                        </div>
+                        <h3 class="text-xl font-bold text-pink-600">Tumbler Pink Sanrio</h3>
+                        <p class="text-sm text-pink-700 mt-2">Botol minum stainless motif Sanrio ice cream edisi terbatas.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-pink-100 flex items-center justify-between">
+                        <span class="text-lg font-bold text-pink-600">Rp 45.000</span>
+                        <button onclick="addToCart('Tumbler Pink Sanrio', 45000)" class="bg-pink-400 hover:bg-pink-500 text-white font-bold px-4 py-2 rounded-full text-sm shadow transition">
+                            + Tambah
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Merch 3 -->
+                <div class="bg-white rounded-3xl p-5 shadow-lg border-2 border-pink-200 hover:shadow-xl transition flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 rounded-2xl overflow-hidden mb-4 bg-pink-50 flex items-center justify-center text-6xl">
+                            🎀
+                        </div>
+                        <h3 class="text-xl font-bold text-pink-600">Sticker Pack Pink Sweet</h3>
+                        <p class="text-sm text-pink-700 mt-2">Isi 20 lembar stiker vinyl anti air karakter Sanrio lucu.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-pink-100 flex items-center justify-between">
+                        <span class="text-lg font-bold text-pink-600">Rp 10.000</span>
+                        <button onclick="addToCart('Sticker Pack Pink Sweet', 10000)" class="bg-pink-400 hover:bg-pink-500 text-white font-bold px-4 py-2 rounded-full text-sm shadow transition">
+                            + Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal (Pop-up) -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 max-w-md w-full border-4 border-pink-300 shadow-2xl">
+            <div class="flex justify-between items-center mb-4 border-b border-pink-100 pb-2">
+                <h3 class="text-2xl font-bold text-pink-600">🛒 Keranjang Belanja</h3>
+                <button onclick="toggleCart()" class="text-gray-400 hover:text-pink-600 text-xl font-bold">&times;</button>
+            </div>
+            
+            <div id="cart-items" class="max-h-60 overflow-y-auto space-y-3 mb-4">
+                <p class="text-center text-gray-500 py-4">Keranjang masih kosong nih 🥺</p>
+            </div>
+
+            <div class="border-t border-pink-100 pt-3 flex justify-between items-center mb-6">
+                <span class="font-bold text-lg text-pink-700">Total Harga:</span>
+                <span id="cart-total" class="font-bold text-xl text-pink-600">Rp 0</span>
+            </div>
+
+            <button onclick="checkout()" class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 rounded-full shadow-lg transition">
+                Pesan via WhatsApp 💬
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-pink-300 text-pink-900 mt-auto py-8 px-4 text-center">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-2xl font-bold text-pink-700 mb-2 font-heading">Letta Shop ✨</h3>
+            <p class="text-sm mb-4">Menciptakan momen manis setiap hari dengan karakter favoritmu!</p>
+            <div class="flex justify-center space-x-4 mb-4 text-xl">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="text-xs text-pink-800">&copy; 2026 Letta Shop. Dibuat dengan 💖 untuk GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function addToCart(title, price) {
+            cart.push({ title, price });
+            updateCartUI();
+            alert(`💖 ${title} berhasil ditambahkan ke keranjang!`);
+        }
+
+        function updateCartUI() {
+            const cartCount = document.getElementById('cart-count');
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+
+            cartCount.textContent = cart.length;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-center text-gray-500 py-4">Keranjang masih kosong nih 🥺</p>';
+                cartTotal.textContent = 'Rp 0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `
+                    <div class="flex justify-between items-center bg-pink-50 p-3 rounded-xl">
+                        <div>
+                            <p class="font-bold text-sm text-pink-700">${item.title}</p>
+                            <p class="text-xs text-pink-500">Rp ${item.price.toLocaleString('id-ID')}</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-red-400 hover:text-red-600 text-xs font-bold">Hapus</button>
+                    </div>
+                `;
+            });
+
+            cartItems.innerHTML = html;
+            cartTotal.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Keranjang kamu masih kosong!');
+                return;
+            }
+
+            let message = 'Halo Letta Shop! ✨ Saya mau pesan:\n\n';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.title} - Rp ${item.price.toLocaleString('id-ID')}\n`;
+                total += item.price;
+            });
+
+            message += `\n*Total: Rp ${total.toLocaleString('id-ID')}*`;
+
+            const phone = '6281234567890'; // Ganti dengan nomor WhatsApp kamu
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+        }
+    </script>
+</body>
+</html>
