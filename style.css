@@ -1,0 +1,261 @@
+/* ==========================================================================
+   LETTA SHOP - STYLESHEET (Pink Sanrio Ice Cream Theme)
+   ========================================================================== */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+    --pink-primary: #ffb6c1;
+    --pink-dark: #ff69b4;
+    --pink-soft: #fff0f5;
+    --pink-accent: #ff85a2;
+    --cream-bg: #fffaf0;
+    --text-color: #5c3a42;
+    --white: #ffffff;
+    --card-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--pink-soft);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-image: radial-gradient(#ffb6c1 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+h1, h2, h3, .logo-text {
+    font-family: 'Fredoka', cursive;
+}
+
+/* --- HEADER & NAVBAR --- */
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+    padding: 15px 5%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.8rem;
+    color: var(--pink-dark);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--pink-dark);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.hero-text h1 {
+    font-size: 3.2rem;
+    color: var(--pink-dark);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #7d525d;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--pink-dark);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background-color: #ff4797;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 25px;
+    box-shadow: var(--card-shadow);
+    border: 5px solid var(--white);
+}
+
+/* --- PRODUCT SECTION --- */
+.products-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--pink-dark);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    margin-bottom: 40px;
+    color: #8c626c;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    border: 2px solid #ffe4e1;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--pink-primary);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--pink-dark);
+    margin-bottom: 15px;
+}
+
+.btn-secondary {
+    background-color: var(--pink-soft);
+    color: var(--pink-dark);
+    border: 2px solid var(--pink-primary);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background-color: var(--pink-primary);
+    color: var(--white);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--white);
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    border-top: 3px dashed var(--pink-primary);
+}
+
+footer p {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+    }
+
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.3rem;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
